@@ -1,0 +1,531 @@
+@font-face {
+  font-family: et-book;
+  src: url(../fonts/et-book-roman-line-figures.woff) format("woff2");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: et-book;
+  src: url(../fonts/et-book-display-italic-old-style-figures.woff) format("woff2");
+  font-style: italic;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  width: 87.5%;
+  margin: 0 auto;
+  padding-left: 12.5%;
+  font-family: et-book, Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;
+  background-color: #232633;
+  color: white;
+  max-width: 1400px;
+  counter-reset: sidenote-counter;
+  padding-left: 0 !important;
+  display: block;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  min-height: -webkit-fill-available;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 5rem 0rem;
+  display: block;
+}
+
+.footer {
+  margin: auto auto 0 auto;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  font-family: 'et-book';
+  font-style: italic;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  position: relative;
+}
+
+.header a {
+  font-size: 1.4rem;
+  margin-right: 1.4rem;
+}
+
+.header a:link,
+.header a:visited {
+  color: inherit;
+}
+
+logo {
+  display: inline-block;
+  position: relative;
+  margin-left: -50px;
+  bottom: 20px;
+  display: none;
+}
+
+module {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: block;
+}
+
+h1 {
+  font-weight: 400;
+  margin: 4rem 0 1.5rem 0;
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.header sup {
+  font-size: 1.4rem;
+  margin-left: 0.7rem;
+  top: -1.4rem;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.expand {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+h2 {
+  font-family: 'et-book';
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 2.1rem;
+  margin-bottom: 1.4rem;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+p {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  padding-right: 0;
+  vertical-align: baseline;
+  overflow-wrap: break-word;
+}
+
+p,
+ol,
+ul {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.chooser {
+  font-family: et-book;
+  font-style: italic;
+  margin: 2.1rem 0 1.4rem 0;
+}
+
+.token-selector label {
+  margin-right: 0.25rem;
+  font-size: 2.2rem !important;
+}
+
+.token-selector input,
+.token-selector label {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+.token-selector button,
+.token-selector input,
+.token-selector optgroup,
+.token-selector select,
+.token-selector textarea {
+  font-family: inherit;
+  font: size 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.token-selector input[type='radio'] + label {
+  display: inline-block;
+  font-size: 2.2rem;
+  font-weight: bolder;
+  border-bottom: 2px white solid;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.token-selector input[type='radio']:checked + label {
+  color: #111111;
+  border-bottom: 2px #111111 solid;
+  background: aquamarine;
+}
+
+.shadow {
+  width: 100%;
+  padding-right: 6px;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+textarea {
+  position: relative;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 5px solid crimson;
+  background: aquamarine;
+  padding: 0.7rem;
+  font-size: 1.4rem;
+  width: 100%;
+  height: 11rem;
+  resize: none;
+  margin-bottom: 1.4rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.accent {
+  font-style: italic;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.addresses .bar {
+  margin: auto 0.3rem;
+  border-bottom: 1px white solid;
+}
+
+.expand {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+amount .sc {
+  font-variant: all-small-caps;
+}
+
+.addresses .fade {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.transaction {
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1.4rem;
+}
+
+.transaction input,
+.connection input {
+  border: none;
+  font-style: italic;
+  padding: 0.7rem;
+  background: aquamarine;
+  -webkit-box-shadow: 6px 6px crimson;
+          box-shadow: 6px 6px crimson;
+}
+
+.connection input {
+  width: 100%;
+}
+
+.transaction .status {
+  margin-left: 1.4rem;
+  font-family: et-book;
+  font-style: italic;
+}
+
+.failed {
+  color: #d43939;
+}
+
+.success {
+  color: #28bd14;
+}
+
+.pending {
+  -webkit-animation: pulse 1.5s infinite;
+          animation: pulse 1.5s infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  font-style: italic;
+}
+
+a:link {
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 93%, 100% 93%, 0% 93%;
+}
+
+a:link {
+  background-position-y: 87%, 87%, 87%;
+}
+
+a:link,
+a:visited {
+  color: inherit;
+}
+
+.transaction .hash {
+  font-style: normal;
+  font-size: 1.1rem;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.token-loader input[type='text'] {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border: none;
+  border-bottom: 2px #111 solid;
+  padding: 0.7rem;
+  background: aquamarine;
+  margin-right: 1.4rem;
+  -webkit-box-shadow: 6px 6px crimson;
+          box-shadow: 6px 6px crimson;
+}
+
+.token-loader input[type='submit'] {
+  border: none;
+  font-family: et-book;
+  font-style: italic;
+  padding: 0.7rem;
+  background: aquamarine;
+  -webkit-box-shadow: 6px 6px crimson;
+          box-shadow: 6px 6px crimson;
+}
+
+.transaction input[type='submit'].secondary {
+  background: none;
+  border: 1px crimson solid;
+  color: white;
+}
+
+input[type='submit']:active {
+  -webkit-box-shadow: 0px 0px crimson;
+          box-shadow: 0px 0px crimson;
+  margin: 6px -6px -6px 6px;
+}
+
+input,
+label {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.error {
+  font-style: italic;
+  font-family: et-book;
+  color: crimson;
+  font-weight: bolder;
+}
+
+.negative {
+  color: crimson;
+}
+
+input[type='submit']:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+input[type='submit']:not(:disabled) {
+  cursor: pointer;
+}
+
+.token-selector label {
+  text-transform: lowercase;
+}
+
+.small-caps, .drop-box h2 {
+  text-transform: lowercase;
+}
+
+.header sup {
+  font-size: 1.4rem;
+  margin-left: 0.7rem;
+  top: -1.4rem;
+  text-transform: lowercase;
+}
+
+amount .sc:not(.addresses *) {
+  font-variant: all-small-caps;
+  border-bottom: 1px solid;
+}
+
+.addresses {
+  word-break: break-word;
+}
+
+input ~ grammarly-extension,
+textarea ~ grammarly-extension {
+  display: none;
+}
+
+span.network-name {
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+
+.drop-box {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 200px;
+  border: 4px dashed #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+  background-color: rgba(35, 38, 51, 0.9);
+}
+
+.drop-box h2 {
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+}
+
+.drop-box input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-icon {
+  padding-top: 25px;
+  width: auto;
+  height: 50%;
+  max-width: auto;
+  fill: white;
+}
+
+.expand-box {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 10px dashed #fff;
+  border-radius: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.expand-box svg {
+  margin-top: -100px;
+}
+
+.expand-box h2 {
+  font-size: 5rem;
+}
+
+.fees {
+  margin-top: 15px;
+  color: #d43939;
+  font-style: italic;
+}
+
+.fees .bar {
+  border-color: #d43939;
+}
+
+.revertonfail .chooser {
+  margin-top: 0;
+}
+
+.revertonfail p.label {
+  font-style: italic;
+}
+/*# sourceMappingURL=stylesheet.css.map */
