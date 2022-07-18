@@ -12,8 +12,9 @@ const ConfirmAmounts = ({ state, setState }) => {
 
   const network = Networks[networkId] || null;
 
+  console.log(`AddressAmounts: ${JSON.stringify(addressAmounts)}`);
   let total = addressAmounts.reduce(function (acc, curr) {
-    return acc.plus(BN(curr[1]));
+    return acc.plus(BN(curr[1].replaceAll(',', '')));
   }, BN(0));
 
   if (selectedToken == 'ether') {
@@ -181,6 +182,8 @@ const ConfirmAmounts = ({ state, setState }) => {
       if (selectedToken == 'token') {
         const addresses = addressAmounts.map((el) => el[0]);
         const amounts = addressAmounts.map((el) => BN(el[1]).times(BN(10).pow(token.decimals)).toFixed());
+
+        console.log(`Sending ${amounts} to ${addresses}`);
 
         const Scatter = new state.web3.eth.Contract(ScatterAbi, network.contractAddress);
         await Scatter.methods
