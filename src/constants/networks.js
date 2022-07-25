@@ -1,4 +1,28 @@
 let networks = {
+  1: {
+    symbol: 'ETH',
+    name: 'Ethereum',
+    networkName: 'Ethereum',
+    type: 'mainnet',
+    explorer: {
+      name: 'etherscan',
+      url: 'https://etherscan.io/',
+    },
+    chainId: 1,
+    rpcSettings: {
+      chainId: `0x${parseInt(1, 10).toString(16)}`,
+      chainName: 'Ethereum Mainnet',
+      nativeCurrency: {
+        name: 'Ethereum Mainnet',
+        symbol: 'ETH',
+        decimals: 18,
+      },
+      rpcUrls: ['https://rpc.ankr.com/eth'],
+      blockExplorerUrls: ['https://etherscan.io/'],
+    },
+    multicallAddress: '0x5Eb3fa2DFECdDe21C950813C665E9364fa609bD2',
+    contractAddress: '0x4Ba7b3a95959b4BA085B8D4A84379e3AC63deDd4',
+  },
   137: {
     symbol: 'MATIC',
     name: 'MATIC',
@@ -146,6 +170,7 @@ let networks = {
     multicallAddress: '0x116b6Fff19f7Cf4D3A183a705C42434fb0e496d3',
     contractAddress: '0xE3840856a94bB12Bde4951aeF796B56C4Cd915D9',
   },
+
   80001: {
     symbol: 'MATIC',
     name: 'Matic Mumbai',
