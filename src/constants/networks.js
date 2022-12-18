@@ -23,6 +23,55 @@ let networks = {
     multicallAddress: '0x5Eb3fa2DFECdDe21C950813C665E9364fa609bD2',
     contractAddress: '0x4Ba7b3a95959b4BA085B8D4A84379e3AC63deDd4',
   },
+
+  8080: {
+    symbol: 'SHM',
+    name: 'Shardeum',
+    networkName: 'Ethereum',
+    type: 'testnet',
+    explorer: {
+      name: 'Shardeum explorer',
+      url: 'https://explorer-liberty10.shardeum.org/',
+    },
+    chainId: 1,
+    rpcSettings: {
+      chainId: `0x${parseInt(8080, 10).toString(16)}`,
+      chainName: 'Shardeum Testnet',
+      nativeCurrency: {
+        name: 'Shardeum testnet',
+        symbol: 'SHM',
+        decimals: 18,
+      },
+      rpcUrls: ['https://liberty10.shardeum.org'],
+      blockExplorerUrls: ['https://explorer-liberty10.shardeum.org/'],
+    },
+    multicallAddress: '0x828aDfa412CeD3C32D818A376a2B6ecE32C3de5c',
+    contractAddress: '0x5e44068ad64849D6e03E8EFF7c4B98F711208d35',
+  },
+  10001: {
+    symbol: 'ETHW',
+    name: 'Ethereum POW',
+    networkName: 'Ethereum POW',
+    type: 'mainnet',
+    explorer: {
+      name: 'ethwscan',
+      url: 'https://mainnet.ethwscan.com/',
+    },
+    chainId: 10001,
+    rpcSettings: {
+      chainId: `0x${parseInt(10001, 10).toString(16)}`,
+      chainName: 'Ethereum POW',
+      nativeCurrency: {
+        name: 'Ethereum Mainnet',
+        symbol: 'ETHW',
+        decimals: 18,
+      },
+      rpcUrls: ['https://mainnet.ethereumpow.org'],
+      blockExplorerUrls: ['https://mainnet.ethwscan.com/'],
+    },
+    multicallAddress: '0x5Eb3fa2DFECdDe21C950813C665E9364fa609bD2',
+    contractAddress: '0x4Ba7b3a95959b4BA085B8D4A84379e3AC63deDd4',
+  },
   137: {
     symbol: 'MATIC',
     name: 'MATIC',
