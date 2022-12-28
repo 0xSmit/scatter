@@ -12,8 +12,9 @@ const ConfirmAmounts = ({ state, setState }) => {
 
   const network = Networks[networkId] || null;
 
+  console.log(`AddressAmounts: ${JSON.stringify(addressAmounts)}`);
   let total = addressAmounts.reduce(function (acc, curr) {
-    return acc.plus(BN(curr[1]));
+    return acc.plus(BN(curr[1].replaceAll(',', '')));
   }, BN(0));
 
   if (selectedToken == 'ether') {

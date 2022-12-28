@@ -19,7 +19,7 @@ let networks = {
         symbol: 'MATIC',
         decimals: 18,
       },
-      rpcUrls: ['https://rpc-mainnet.maticvigil.com/'],
+      rpcUrls: ['https://polygon.llamarpc.com/'],
       blockExplorerUrls: ['https://polygonscan.com/'],
     },
   },
