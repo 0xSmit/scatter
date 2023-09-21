@@ -183,6 +183,8 @@ const ConfirmAmounts = ({ state, setState }) => {
         const addresses = addressAmounts.map((el) => el[0]);
         const amounts = addressAmounts.map((el) => BN(el[1]).times(BN(10).pow(token.decimals)).toFixed());
 
+        console.log(`Sending ${amounts} to ${addresses}`);
+
         const Scatter = new state.web3.eth.Contract(ScatterAbi, network.contractAddress);
         await Scatter.methods
           .scatterEther(addresses, amounts, false)

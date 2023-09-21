@@ -3,16 +3,13 @@ import XLSX from 'xlsx';
 
 import { toast } from 'react-toastify';
 
-const validtypes = [
-  'text/csv',
-  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-];
+const validtypes = ['text/csv', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
 
 const DragAndDrop = ({ state, setState }) => {
   const { web3 } = state;
   const fileDrop = (e) => {
     e.preventDefault();
-    setState((prevState=>({...prevState,expandBox:false})))
+    setState((prevState) => ({ ...prevState, expandBox: false }));
     try {
       const file = e?.dataTransfer?.files[0] || e?.target?.files[0];
       if (file) {
@@ -45,18 +42,20 @@ const DragAndDrop = ({ state, setState }) => {
     if (!data.length) return toast.error('No data in the file');
     for (let item of data) {
       if (web3.utils.isAddress(item[0]) && parseFloat(item[1])) {
-        addressAmounts.push([item[0], item[1]]);
+        addressAmounts.push([item[0], item[1].replaceAll(',', '')]);
       }
     }
     if (!addressAmounts.length) return toast.error('No data in the file');
+    console.log(addressAmounts);
+
     setState((prevState) => ({ ...prevState, addressBox: '', addressAmounts }));
   };
 
   return (
     <module>
       <p className='small-caps'>
-        Please use two columns only. Column one for addresses, column two for amounts to send. No
-        other format will work.
+        Please use two columns only. Column one for addresses, column two for amounts to send. No other format will
+        work.
       </p>
       {state.expandBox && (
         <div onDrop={fileDrop} className='drop-box'>
@@ -76,10 +75,7 @@ const DragAndDrop = ({ state, setState }) => {
           <h2>drag csv file here or click here to upload</h2>
         </div>
       )}
-      <div
-        onDrop={fileDrop}
-        className={state.expandBox == true ? 'drop-box expand-box' : 'drop-box'}
-      >
+      <div onDrop={fileDrop} className={state.expandBox == true ? 'drop-box expand-box' : 'drop-box'}>
         <input type='file' value='' onChange={fileDrop} />
 
         {state.expandBox == true ? (
@@ -99,9 +95,7 @@ const DragAndDrop = ({ state, setState }) => {
           </svg>
         )}
 
-        <h2>
-          {state.expandBox == true ? 'drop here' : 'drag csv file here or click here to upload'}
-        </h2>
+        <h2>{state.expandBox == true ? 'drop here' : 'drag csv file here or click here to upload'}</h2>
       </div>
     </module>
   );
