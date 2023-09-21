@@ -59,7 +59,6 @@ function App() {
 
   const dragEnter = (e) => {
     e.preventDefault();
-    console.log('In Enter', e);
     if (state.expandBox == false) {
       setState((prevState) => ({ ...prevState, expandBox: true }));
     }
@@ -67,7 +66,6 @@ function App() {
 
   const dragLeave = (e) => {
     e.preventDefault();
-    console.log(e);
     if (e.screenX == 0 && e.screenY == 0) {
       setState((prevState) => ({ ...prevState, expandBox: false }));
     }
@@ -76,8 +74,6 @@ function App() {
   useEffect(() => {
     let arr = state.addressBox.split('\n');
     const addrAmts = [];
-
-    console.log('in first effect');
 
     for (let item of arr) {
       const temp = item.split(/[\s,=]/);
@@ -107,9 +103,7 @@ function App() {
       const web3 = new Web3(provider);
       //Extend method to convert chainId from Hex to number
       web3.eth.extend({
-        methods: [
-          { name: 'chainId', call: 'eth_chainId', outputFormatter: web3.utils.hexToNumber },
-        ],
+        methods: [{ name: 'chainId', call: 'eth_chainId', outputFormatter: web3.utils.hexToNumber }],
       });
 
       function subscribeEvents() {
@@ -128,7 +122,6 @@ function App() {
         //   }));
         // });
         provider.on('accountsChanged', async (accounts) => {
-          console.log('in accounts change');
           if (accounts[0]) {
             setState((prevState) => ({
               ...prevState,
@@ -146,7 +139,6 @@ function App() {
         });
 
         provider.on('chainChanged', async (chainId) => {
-          console.log('in chain change');
           window.location.reload();
           // chainId = web3.utils.isHex(chainId) ? web3.utils.hexToNumber(chainId) : chainId;
           // setState((prevState) => ({
@@ -188,7 +180,6 @@ function App() {
       }));
     } catch (err) {
       toast.error(err.message);
-      console.log('error while connecting');
     }
   }
 

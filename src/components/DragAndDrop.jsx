@@ -20,7 +20,6 @@ const DragAndDrop = ({ state, setState }) => {
           try {
             const binaryData = evt.target.result;
             const wb = XLSX.read(binaryData, { type: 'binary' });
-            console.log('here');
             let data = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {
               raw: false,
               header: 1,
@@ -46,7 +45,6 @@ const DragAndDrop = ({ state, setState }) => {
       }
     }
     if (!addressAmounts.length) return toast.error('No data in the file');
-    console.log(addressAmounts);
 
     setState((prevState) => ({ ...prevState, addressBox: '', addressAmounts }));
   };

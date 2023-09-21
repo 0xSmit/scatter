@@ -15,7 +15,10 @@ const Allowance = ({ token, networkId, total, state, setState }) => {
       return (
         <>
           <h2>allowance</h2>
-          <p class='small-caps'>the Smart Contract has permission to send these tokens from your wallet. You can revoke it anytime by pressing the revoke button.</p>
+          <p class='small-caps'>
+            the Smart Contract has permission to send these tokens from your wallet. You can revoke it anytime by
+            pressing the revoke button.
+          </p>
           <div className='transaction'>
             <input type='submit' value='revoke' className='secondary' onClick={() => changeAllowance('0')} />
             <div className='status'>
@@ -34,7 +37,11 @@ const Allowance = ({ token, networkId, total, state, setState }) => {
           <h2>allowance</h2>
           <p>allow smart contract to transfer tokens on your behalf.</p>
           <div className='transaction'>
-            <input type='submit' value='approve' onClick={() => changeAllowance('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')} />
+            <input
+              type='submit'
+              value='approve'
+              onClick={() => changeAllowance('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')}
+            />
             <div className='status'>
               <div style={{ display: 'none' }}></div>
               <div className={allowanceData.type}>{allowanceData.status}</div>
