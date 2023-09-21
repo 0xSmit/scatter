@@ -23,31 +23,6 @@ let networks = {
     multicallAddress: '0x5Eb3fa2DFECdDe21C950813C665E9364fa609bD2',
     contractAddress: '0x4Ba7b3a95959b4BA085B8D4A84379e3AC63deDd4',
   },
-
-  8080: {
-    symbol: 'SHM',
-    name: 'Shardeum',
-    networkName: 'Ethereum',
-    type: 'testnet',
-    explorer: {
-      name: 'Shardeum explorer',
-      url: 'https://explorer-liberty10.shardeum.org/',
-    },
-    chainId: 1,
-    rpcSettings: {
-      chainId: `0x${parseInt(8080, 10).toString(16)}`,
-      chainName: 'Shardeum Testnet',
-      nativeCurrency: {
-        name: 'Shardeum testnet',
-        symbol: 'SHM',
-        decimals: 18,
-      },
-      rpcUrls: ['https://liberty10.shardeum.org'],
-      blockExplorerUrls: ['https://explorer-liberty10.shardeum.org/'],
-    },
-    multicallAddress: '0x828aDfa412CeD3C32D818A376a2B6ecE32C3de5c',
-    contractAddress: '0x5e44068ad64849D6e03E8EFF7c4B98F711208d35',
-  },
   10001: {
     symbol: 'ETHW',
     name: 'Ethereum POW',
@@ -122,31 +97,6 @@ let networks = {
   },
 
   // 0xE3840856a94bB12Bde4951aeF796B56C4Cd915D9
-
-  1666600000: {
-    symbol: 'ONE',
-    name: 'HARMONY',
-    networkName: 'HARMONY',
-    type: 'mainnet',
-    explorer: {
-      name: 'harmony-explorer',
-      url: 'https://explorer.harmony.one',
-    },
-    chainId: 1666600000,
-    rpcSettings: {
-      chainId: `0x${parseInt(1666600000, 10).toString(16)}`,
-      chainName: 'Harmony Mainnet',
-      nativeCurrency: {
-        name: 'Harmony coin',
-        symbol: 'ONE',
-        decimals: 18,
-      },
-      rpcUrls: ['https://api.harmony.one'],
-      blockExplorerUrls: ['https://explorer.harmony.one/'],
-    },
-    contractAddress: '0x62C3506c089c8291f6d432d7F380bD59cdc2AAA5',
-    multicallAddress: '0xE3840856a94bB12Bde4951aeF796B56C4Cd915D9',
-  },
   97: {
     symbol: 'BNB',
     name: 'BSC',
@@ -170,54 +120,6 @@ let networks = {
     },
     multicallAddress: '0xd22cc9d6DB74c23d083a32Ec0b4D23Da25D95Db8',
     contractAddress: '0xEFDcC78F733ac025F3b9eFBa186c315bAe2Bb3eF',
-  },
-  4: {
-    symbol: 'ETH',
-    name: 'Rinkeby ETH',
-    networkName: 'Rinkeby ETH',
-    type: 'testnet',
-    explorer: {
-      name: 'etherscan',
-      url: 'https://rinkeby.etherscan.io',
-    },
-    chainId: 4,
-    rpcSettings: {
-      chainId: `0x${parseInt(4, 10).toString(16)}`,
-      chainName: 'Rinkeby Test Network',
-      nativeCurrency: {
-        name: 'Rinkeby Test Network',
-        symbol: 'ETH',
-        decimals: 18,
-      },
-      rpcUrls: ['https://main-light.eth.linkpool.io/'],
-      blockExplorerUrls: ['https://rinkeby.etherscan.io/'],
-    },
-    multicallAddress: '0x31305e122b01EB35F695Ce3F6fFB15F0138a17cD',
-    contractAddress: '0xcE044d06b439f6fEBe8c97B80f045eA8867cf3B0',
-  },
-  3: {
-    symbol: 'ETH',
-    name: 'Ropsten ETH',
-    networkName: 'Ropsten ETH',
-    type: 'testnet',
-    explorer: {
-      name: 'etherscan',
-      url: 'https://ropsten.etherscan.io/',
-    },
-    chainId: 3,
-    rpcSettings: {
-      chainId: `0x${parseInt(3, 10).toString(16)}`,
-      chainName: 'Ropsten Test Network',
-      nativeCurrency: {
-        name: 'Ropsten Test Network',
-        symbol: 'ETH',
-        decimals: 18,
-      },
-      rpcUrls: ['https://rinkeby-light.eth.linkpool.io'],
-      blockExplorerUrls: ['https://ropsten.etherscan.io/'],
-    },
-    multicallAddress: '0x116b6Fff19f7Cf4D3A183a705C42434fb0e496d3',
-    contractAddress: '0xE3840856a94bB12Bde4951aeF796B56C4Cd915D9',
   },
 
   80001: {
