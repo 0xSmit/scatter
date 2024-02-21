@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.09e4f04d.css",
+    "main.js": "/static/js/main.8f180161.js",
+    "static/js/27.f456b005.chunk.js": "/static/js/27.f456b005.chunk.js",
+    "static/media/et-book-roman-line-figures.woff": "/static/media/et-book-roman-line-figures.4ac21e22fa566a3a9d03.woff",
+    "static/media/et-book-display-italic-old-style-figures.woff": "/static/media/et-book-display-italic-old-style-figures.265915ee0e932b50d567.woff",
+    "index.html": "/index.html",
+    "static/media/logo.svg": "/static/media/logo.732c3458d8262cf2fbe61510a64352d1.svg"
+  },
+  "entrypoints": [
+    "static/css/main.09e4f04d.css",
+    "static/js/main.8f180161.js"
+  ]
+}
