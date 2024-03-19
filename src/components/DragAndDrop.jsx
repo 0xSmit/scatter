@@ -1,5 +1,5 @@
 import React from 'react';
-import XLSX from 'xlsx';
+import * as XLSX from 'xlsx';
 
 import { toast } from 'react-toastify';
 
