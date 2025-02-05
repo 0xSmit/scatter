@@ -21,9 +21,9 @@ const Header = ({ state: { networkId } }) => {
               {network.explorer.name}
             </a>
           ) : null}
-          <a href='https://telegram.me/coincrunchin' target='_blank'>
+          {/* <a href='https://telegram.me/coincrunchin' target='_blank'>
             telegram
-          </a>
+          </a> */}
         </div>
       </div>
     </module>
